@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(236, 235, 234);
+}
+h1{
+    text-align: center;
+    margin-top: 5%;
+    font-weight: bold;
+    font-size: 3rem;
+}
+h1 span{
+    color: orange;
+}
+.tabButtons{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+.btn{
+    padding: 5px 30px;
+    margin-right: 0.5%;
+    border: 1px solid orange;
+    color: orange;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.active, .btn:hover, .submitBtn:hover{
+    background-color:orange;
+    color: white;
+    transition: .3s;
+}
+.form{
+    width: 100%;
+    height: 80%;
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+form input{
+    margin-bottom: 10px;
+    border: none;
+    background-color: white;
+    width: 250px;
+    height: 25px;
+    color: orange;
+    border-radius: 20px;
+    margin-top: 5%;
+    padding-left: 5px;
+    padding-bottom: 4px;
+}
+form input[type="file"]{
+    background-color: inherit;
+    padding-top: 1px;
+    padding-left: 7px;
+}
+form a{
+    text-decoration: none;
+    color: orange;
+    font-size: 12px;
+}
+.submitBtn{
+    margin-top: 6%;
+    padding: 3px 10px;
+    border-radius: 25px;
+    border: orange 1px solid;
+    color: orange;
+    cursor: pointer;
+}
+#register{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity .35s ease;
+}
+#login{
+    opacity: 1;
+    transition: visibility 0s, opacity .35s ease;
+}

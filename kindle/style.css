@@ -176,3 +176,20 @@ form a{
     width: 40%;
     margin-left: 25%;
 }
+.second-part{
+    width: 75%;
+    height: 100%;
+}
+.navbar{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.second-part-nav{
+    display: flex;
+
+}
+.search{
+    background-color: red;
+}

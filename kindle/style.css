@@ -159,6 +159,7 @@ form a{
     text-decoration: none;
     color: black;
     font-weight: bold;
+    margin-left: 2%;
 }
 .row-Container a:hover{
     text-decoration: underline;
@@ -181,15 +182,181 @@ form a{
     height: 100%;
 }
 .navbar{
-    width: 95%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .second-part-nav{
     display: flex;
-
+    align-items: center;
+    width: 50%;
+    margin-top: 3%;
+    position: relative;
+}
+.second-part-logo{
+    width: 50%;
+    display: flex;
+    justify-content: start;
 }
 .search{
-    background-color: red;
+    background-color: white;
+    padding: 0 10px;
+    border-radius: 25px;
+    width: 40%;
+}
+.search input{
+    height: 40px;
+    width: 85%;
+    border: none;
+    
+}
+.search input:focus{
+    outline: none;
+}
+.search button{
+     background-color: inherit;
+     border: none;
+     cursor: pointer;
+}
+.second-part-nav a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-left: 4%;
+    position: relative;
+}
+.second-part-nav a span{
+    color: orange;
+    font-size: 30px;
+    position: absolute;
+    bottom: 7px;
+}
+.second-part-nav a:hover{
+    text-decoration: underline;
+}
+.second-part-nav button{
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    margin-left: 4%;
+    position: relative;
+}
+.dots{
+    
+    position: relative;
+    display: flex;
+    margin-bottom: 16px;
+}
+.dot1, .dot2{
+    height: 5px;
+    width: 5px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+}
+.dot2{
+    margin-left: 10px;
+}
+.dot1::before, .dot2::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    margin-top: 13px;
+    height: 5px;
+    width: 5px;
+    background-color: black;
+    border-radius: 50%;
+}
+.second-body{
+    width: 100%;
+}
+.second-body{
+    margin-top: 5%;
+}
+.first-book-row{
+    display: flex;
+    margin-top: 10%;
+    width: 100%;
+}
+.book-read{
+    width: 35%;
+    background-color: white;
+    position: relative;
+    padding: 5% 5%;
+    border-radius: 25px;
+}
+.book-read:nth-child(1){
+    background-image: linear-gradient(to right, rgb(80, 77, 62),#D7CFBD,rgb(201, 201, 172), black);
+    
+}
+.book-read:nth-child(3){
+    background-image: linear-gradient(to right, rgb(212, 200, 146),rgba(48, 37, 37, 0.644),rgb(252, 244, 210));
+}
+.book-read:nth-child(5){
+    background-image: linear-gradient(to right,black, rgb(115, 128, 0), rgb(139, 97, 148));
+}
+.book-read img{
+    width: 25%;
+    position: absolute;
+    left: 5%;
+    bottom: 15%;
+    border-radius: 15px;
+}
+.book-read h3, .book-read p{
+    margin-left: 32%;
+}
+.space{
+    width: 2%;
+}
+.second-row{
+    display: flex;
+    width: 100%;
+    margin-top: 5%;
+}
+.first-column{
+    width: 65%;
+
+}
+.book-list{
+    display: flex;
+}
+.book-info{
+    margin-top: 3%;
+    width: auto;
+}
+.book-info img{
+    width: 80%;
+    border-radius: 15px;
+}
+.book-info button{
+    border: none;
+    margin-top: 2%;
+    padding: 3px 10px;
+    border-radius: 25px;
+}
+.second-column{
+    width: 30%;
+    background-image: linear-gradient(to right, #ECE8E5, #ECECEC);
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    margin-left: 5%;
+}
+.author-row{
+    display: flex;
+    align-items: center;
+}
+.author-row img{
+    width: 15%;
+    border-radius: 50%;
+}
+.author-details{
+    margin-left: 3%;
+}
+.author-row, .second-column h5{
+    margin-left: 15%;
+    margin-top: 5%;
+}
+.second-column h5{
+    margin-top: 8%;
 }

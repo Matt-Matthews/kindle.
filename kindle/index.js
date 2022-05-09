@@ -87,10 +87,9 @@ function logUser(){
     if(userEmail.value != '' && userPasswd.value != ''){
         if(userEmail.value ==user[2] && userPasswd.value == user[5]){
         
-            welcomeName.innerHTML = user[0];
-            ppic.src = user[4];
+            sessionStorage.setItem('user', user);
+            window.location.href = 'landingPage.html';
 
-            //window.location.href = 'landingPage.html';
 
         } else {
             logErrMsg.innerHTML = 'wrong email or password, or user does not exist!';
@@ -101,3 +100,12 @@ function logUser(){
         logErrMsg.innerHTML = 'Insert your email and password!';
     }
 }
+
+
+
+    var userData = sessionStorage.getItem('user');
+    console.log(userData);
+    welcomeName.innerHTML = userData[0];
+    ppic.src = userData[4];
+    sessionStorage.clear();
+

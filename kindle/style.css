@@ -360,3 +360,6 @@ form a{
 .second-column h5{
     margin-top: 8%;
 }
+#logErrMsg, #regErrMsg{
+     color: red;
+}

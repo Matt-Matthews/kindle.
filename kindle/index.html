@@ -15,16 +15,18 @@
         <button class="btn" id="Signin" onclick="openTab('Signin')">Sign In</button>
         <button class="btn" id="Signup" onclick="openTab('Signup')">Sign Up</button>
     </div>
+
     <div class="form" >
     <div class="form-layout" id="login">
         <form action="">
             <label for="Name">Email:</label><br>
-            <input type="text" id="Email" name="Email" placeholder="Email"><br>
+            <input type="text" id="userEmail" name="userEmail" placeholder="Email"><br>
             <label for="Name">Password:</label><br>
-            <input type="password" id="Password" name="Password" placeholder="Password"><br>
+            <input type="password" id="userPassword" name="userPassword" placeholder="Password"><br>
             <a href="#">Forgot Password?</a><br>
-            <button class="submitBtn">Submit</button>
         </form>
+        <button class="submitBtn" onclick="logUser()">Submit</button>
+        <p id="logErrMsg"></p>
     </div>
     </div>
 
@@ -32,23 +34,25 @@
     <div class="form-layout" id="register">
         <form action="">
             <label for="Name">Name:</label><br>
-            <input type="text" id="Name" name="Name" placeholder="Name"><br>
+            <input type="text" id="name" name="Name" placeholder="Name"><br>
             <label for="Surname">Surname:</label><br>
-            <input type="text" id="Surname" name="Surname" placeholder="Surname"><br>
+            <input type="text" id="surname" name="Surname" placeholder="Surname"><br>
             <label for="Email">Email:</label><br>
-            <input type="text" id="Email" name="Email" placeholder="Email"><br>
+            <input type="text" id="email" name="Email" placeholder="Email"><br>
             <label for="PhoneNumber">PhoneNumber:</label><br>
-            <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="+27"><br>
+            <input type="text" id="phoneNumber" name="PhoneNumber" placeholder="+27"><br>
             <label for="Name">New Password:</label><br>
-            <input type="password" id="Password" name="Password" placeholder="Password"><br>
+            <input type="password" id="password" name="Password" placeholder="Password"><br>
             <label for="Name">Confirm Password:</label><br>
-            <input type="password" id="Password" name="Password" placeholder="Password"><br>
+            <input type="password" id="cPassword" name="Password" placeholder="Password"><br>
             <label for="img">Select image:</label><br>
-            <input type="file" id="img" name="img" accept="image/*" class="chooseFile"><br>
-            <button class="submitBtn">Submit</button>
+            <input type="file" id="img" name="img"  accept="image/*" class="chooseFile"><br>
         </form>
+        <button class="submitBtn" onclick="createUser()">Submit</button>
+        <p id="regErrMsg"></p>
     </div>
     </div>
+
     <div class="logo-container" id="logo-container">
         <div class="logo">
             <h3>Product of</h3>

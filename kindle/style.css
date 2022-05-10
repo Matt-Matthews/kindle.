@@ -7,6 +7,7 @@ body{
     height: 100%;
     width: 100%;
     background-color: #F6F5F1;
+    overflow: hidden;
 }
 h1{
     text-align: center;
@@ -274,40 +275,81 @@ form a{
 .second-body{
     margin-top: 5%;
 }
-.first-book-row{
-    display: flex;
-    margin-top: 10%;
+.first-row{
     width: 100%;
+    position: relative;
+}
+.scrollable{
+    width: 100%;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+.scrollable::-webkit-scrollbar{
+    display: none;
+}
+.first-row ul{
+    list-style: none;
+    margin-top: 10%;
+    width: 160%;
+    display: inline-flex;
+    justify-content: space-between;
+    overflow-x: visible;
+    overflow-y: visible;
+}
+.first-row ul li{
+    width: 400px;
+    height: 150px;
+    background-color: blue;
+    border-radius: 25px;
+
+}
+.nextBtn{
+    position: absolute;
+    right: 1%;
+    top: 65%;
+    cursor: pointer;
+    padding: 7px 10px;
+    border-radius: 50%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.322);
+    border: 3px white solid;
+}
+.prevBtn{
+    position: absolute;
+    left: 1%;
+    top: 65%;
+    cursor: pointer;
+    padding: 7px 10px;
+    border-radius: 50%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.322);
+    border: 3px white solid;
+    display: none;
+}
+.fa.fa-arrow-right, .fa.fa-arrow-left{
+    font-size: 30px;
 }
 .book-read{
-    width: 35%;
-    background-color: white;
+    width: 100%;
+    height: 100%;
     position: relative;
-    padding: 5% 5%;
     border-radius: 25px;
 }
-.book-read:nth-child(1){
-    background-image: linear-gradient(to right, rgb(80, 77, 62),#D7CFBD,rgb(201, 201, 172), black);
-    
-}
-.book-read:nth-child(3){
-    background-image: linear-gradient(to right, rgb(212, 200, 146),rgba(48, 37, 37, 0.644),rgb(252, 244, 210));
-}
-.book-read:nth-child(5){
-    background-image: linear-gradient(to right,black, rgb(115, 128, 0), rgb(139, 97, 148));
-}
 .book-read img{
-    width: 25%;
+    width: 35%;
     position: absolute;
     left: 5%;
-    bottom: 15%;
+    bottom: 45%;
     border-radius: 15px;
 }
-.book-read h3, .book-read p{
-    margin-left: 32%;
+.book-read h3{
+    margin-top: 45px;
 }
-.space{
-    width: 2%;
+.book-read h3, .book-read p{
+    margin-left: 43%;
+    color: white;
 }
 .second-row{
     display: flex;
@@ -334,6 +376,7 @@ form a{
     margin-top: 2%;
     padding: 3px 10px;
     border-radius: 25px;
+    cursor: pointer;
 }
 .second-column{
     width: 30%;

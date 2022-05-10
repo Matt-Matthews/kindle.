@@ -12,9 +12,9 @@
     <div class="landing-page">
         <div class="first-Part">
             <div class="profile">
-                <img class="profileImg" src="" alt="Profile Photo">
+                <img id="profileImg" src="" alt="Profile Photo">
                 <p>Welcome <br> Back</p>
-                <h3 class="welcomeName"></h3>
+                <h3 id="welcomeName"></h3>
             </div>
 
             <div class="board">
@@ -75,60 +75,80 @@
 
             <div class="second-body">
                 <h4>Books your read last</h4>
-                <div class="first-book-row">
-                    <div class="book-read" id="book-read">
-                        <img class="books" src="images/books/50-anniversary-cover1-350x564.webp">
-                        <h3>name of the book</h3>
-                        <p>number of pages and chapters</p>
-                    </div>
-                    <div class="space"></div>
-                    <div class="book-read" id="book-read">
-                        <img src="images/books/71h2sjik5al-_sl1380_-641x1024.webp">
-                        <h3>name of the book</h3>
-                        <p>number of pages and chapters</p>
-                    </div>
-                    <div class="space"></div>
-                    <div class="book-read" id="book-read">
-                        <img src="images/books/cvr9781416500247_9781416500247_hr-633x1024.webp">
-                        <h3>name of the book</h3>
-                        <p>number of pages and chapters</p>
-                    </div>
-                   
-                </div>
+                <div class="first-row" id="first-row">
+                <div class="scrollable" id="scrollable">
+                <ul id="list">
+                    
+                    <li><div class="book-read" id="book-read">
+                        <img id="lastBook1" src="">
+                        <h3 id="lastBookName1"></h3>
+                        <p id="comment1"></p>
+                    </div></li>
+                    
+                    
+                    <li><div class="book-read" id="book-read">
+                        <img id="lastBook2" src="">
+                        <h3 id="lastBookName2"></h3>
+                        <p id="comment2"></p>
+                    </div></li>
+                    
+                    
+                    <li><div class="book-read" id="book-read">
+                        <img id="lastBook3" src="">
+                        <h3 id="lastBookName3"></h3>
+                        <p id="comment3"></p>
+                    </div></li>
 
+                    <li><div class="book-read" id="book-read">
+                        <img id="lastBook4" src="">
+                        <h3 id="lastBookName4"></h3>
+                        <p id="comment4"></p>
+                    </div></li>
+                    
+                    <li><div class="book-read" id="book-read">
+                        <img id="lastBook5" src="">
+                        <h3 id="lastBookName5"></h3>
+                        <p id="comment5"></p>
+                    </div></li>
+                   
+                </ul>
+                </div>
+                <button class="prevBtn" id="prevBtn"><i class="fa fa-arrow-left"></i></button>
+                <button class="nextBtn" id="nextBtn"><i class="fa fa-arrow-right"></i></button>
+                </div>
                 <div class="second-row">
                     <div class="first-column">
                         <h4>New Release</h4>
                         <div class="book-list">
-                        <div class="book-info" >
-                            <img src="images/books/9780618640157_custom-s6-c30-682x1024.webp">
-                            <h3>Name of the book</h3>
-                            <p>name of the author</p>
-                            <button>Category</button>
+                        <div class="book-info" id="book-info">
+                            <img id="bookImg1" src="">
+                            <h3 id="bookName1"></h3>
+                            <p id="nameOfAuthor1"></p>
+                            <button id="Category1"></button>
                         </div>
                         <div class="book-info" >
-                            <img src="images/books/tumblr_nd4wnpO3ZS1tv8vcro1_r1_1280-682x1024.webp">
-                            <h3>Name of the book</h3>
-                            <p>name of the author</p>
-                            <button>Category</button>
+                            <img id="bookImg2" src="">
+                            <h3 id="bookName2"></h3>
+                            <p id="nameOfAuthor2"></p>
+                            <button id="Category2"></button>
                         </div>
                         <div class="book-info" >
-                            <img src="images/books/pride_and_prejudice_book_cover_by_fourblackbirds-d533108-723x1024.png">
-                            <h3>Name of the book</h3>
-                            <p>name of the author</p>
-                            <button>Category</button>
+                            <img id="bookImg3" src="">
+                            <h3 id="bookName3"></h3>
+                            <p id="nameOfAuthor3"></p>
+                            <button id="Category3"></button>
                         </div>
                         <div class="book-info" >
-                            <img src="images/books/Penguin-2-668x1024.webp">
-                            <h3>Name of the book</h3>
-                            <p>name of the author</p>
-                            <button>Category</button>
+                            <img id="bookImg4" src="">
+                            <h3 id="bookName4"></h3>
+                            <p id="nameOfAuthor4"></p>
+                            <button id="Category4"></button>
                         </div>
                         <div class="book-info" >
-                            <img src="images/books/Hobbit_book-673x1024.webp">
-                            <h3>Name of the book</h3>
-                            <p>name of the author</p>
-                            <button>Category</button>
+                            <img id="bookImg5" src="">
+                            <h3 id="bookName5"></h3>
+                            <p id="nameOfAuthor5"></p>
+                            <button id="Category5"></button>
                         </div>
                         </div>
                     </div>
@@ -136,24 +156,24 @@
                     <div class="second-column">
                         <h5>Famous Authers</h5>
                         <div class="author-row">
-                            <img src="images/avatar/avatar.webp">
+                            <img id="authorImg1" src="">
                             <div class="author-details">
-                                <h6>Author`s name</h6>
-                                <p>Number of books</p>
+                                <h6 id="authorName1"></h6>
+                                <p id="numOfBooks1"></p>
                             </div>
                         </div>
                         <div class="author-row">
-                            <img src="images/avatar/avatar.webp">
+                            <img id="authorImg2" src="">
                             <div class="author-details">
-                                <h6>Author`s name</h6>
-                                <p>Number of books</p>
+                                <h6 id="authorName2"></h6>
+                                <p id="numOfBooks2"></p>
                             </div>
                         </div>
                         <div class="author-row">
-                            <img src="images/avatar/avatar.webp">
+                            <img id="authorImg3" src="">
                             <div class="author-details">
-                                <h6>Author`s name</h6>
-                                <p>Number of books</p>
+                                <h6 id="authorName3"></h6>
+                                <p id="numOfBooks3"></p>
                             </div>
                         </div>
                     </div>
@@ -162,6 +182,7 @@
             </div>
         </div>
     </div>
+
 </body>
-<script src="index.js"></script>
+<script src="landingPage.js"></script>
 </html>

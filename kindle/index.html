@@ -18,14 +18,15 @@
 
     <div class="form" >
     <div class="form-layout" id="login">
-        <form action="">
+        <form action="landingPage.html">
             <label for="Name">Email:</label><br>
             <input type="text" id="userEmail" name="userEmail" placeholder="Email"><br>
             <label for="Name">Password:</label><br>
             <input type="password" id="userPassword" name="userPassword" placeholder="Password"><br>
             <a href="#">Forgot Password?</a><br>
+            <button class="submitBtn" onclick="logUser()">Submit</button>
         </form>
-        <button class="submitBtn" onclick="logUser()">Submit</button>
+        
         <p id="logErrMsg"></p>
     </div>
     </div>

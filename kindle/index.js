@@ -1,8 +1,8 @@
-var login = document.getElementById('login');
-var register = document.getElementById('register');
-var signin = document.getElementById('Signin');
-var signup = document.getElementById('Signup');
-var logo_ = document.getElementById('logo-container');
+const login = document.getElementById('login');
+const register = document.getElementById('register');
+const signin = document.getElementById('Signin');
+const signup = document.getElementById('Signup');
+const logo_ = document.getElementById('logo-container');
 signin.classList.add('active');
 logo_.style.bottom = '30%';
 
@@ -43,25 +43,39 @@ function openTab(tab){
     }
 }
 
+// the real data 
 
-var userName = document.getElementById('name');
-var email = document.getElementById('email');
-var surname = document.getElementById('surname');
-var passwrd = document.getElementById('password');
-var cPasswrd = document.getElementById('cPassword');
-var phoneNo = document.getElementById('phoneNumber');
-var img = document.getElementById('img');
-var user = [];
-var errMsg = document.getElementById('regErrMsg');
 
+//the user data
+
+
+const userName = document.getElementById('name');
+const email = document.getElementById('email');
+const surname = document.getElementById('surname');
+const passwrd = document.getElementById('password');
+const cPasswrd = document.getElementById('cPassword');
+const phoneNo = document.getElementById('phoneNumber');
+let user = [];
+const errMsg = document.getElementById('regErrMsg');
+
+
+document.querySelector('#img').addEventListener("change", function(){
+    const reader = new FileReader();
+
+    reader.addEventListener("load", () => {
+        sessionStorage.setItem('img', reader.result);
+    });
+    reader.readAsDataURL(this.files[0]);
+});
 
 function createUser(){
 
     if(userName.value !='' && surname.value!=''&& email.value!=''&& phoneNo.value!=''&& img.value!=''&& passwrd.value!='' &&cPasswrd!=''){
         if(passwrd.value == cPasswrd.value){
 
-            user.push(userName.value, surname.value, email.value, phoneNo.value, img.value, passwrd.value);
+            user.push(userName.value, surname.value, email.value, phoneNo.value, passwrd.value);
             errMsg.innerHTML = 'user created successfully';
+            
             sigInTab();
         }
         else{
@@ -76,19 +90,20 @@ function createUser(){
 }
 
 
-var logErrMsg = document.getElementById('logErrMsg');
-var userPasswd = document.getElementById('userPassword');
-var userEmail = document.getElementById('userEmail');
-var welcomeName = document.getElementsByClassName('welcomeName');
-var ppic = document.getElementsByClassName('profileImg');
+const logErrMsg = document.getElementById('logErrMsg');
+const userPasswd = document.getElementById('userPassword');
+const userEmail = document.getElementById('userEmail');
+const welcomeName = document.getElementsByClassName('welcomeName');
+const ppic = document.getElementsByClassName('profileImg');
 
 function logUser(){
 
     if(userEmail.value != '' && userPasswd.value != ''){
-        if(userEmail.value ==user[2] && userPasswd.value == user[5]){
+        if(userEmail.value ==user[2] && userPasswd.value == user[4]){
         
-            sessionStorage.setItem('user', user);
+            sessionStorage.setItem('name', user[0]);
             window.location.href = 'landingPage.html';
+            
 
 
         } else {
@@ -101,11 +116,4 @@ function logUser(){
     }
 }
 
-
-
-    var userData = sessionStorage.getItem('user');
-    console.log(userData);
-    welcomeName.innerHTML = userData[0];
-    ppic.src = userData[4];
-    sessionStorage.clear();
 

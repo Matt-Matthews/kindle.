@@ -7,7 +7,7 @@ body{
     height: 100%;
     width: 100%;
     background-color: #F6F5F1;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 h1{
     text-align: center;
@@ -301,9 +301,24 @@ form a{
 .first-row ul li{
     width: 400px;
     height: 150px;
-    background-color: blue;
     border-radius: 25px;
-
+    margin-right: 1%;
+}
+.imgCard{
+    position: absolute;
+    border-radius: 25px;
+    width:400px;
+    height: 150px;
+    background-size: cover;
+}
+.card{
+    position: absolute;
+    border-radius: 25px;
+    width:400px;
+    height: 150px;
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.404);
+    
 }
 .nextBtn{
     position: absolute;
@@ -361,7 +376,9 @@ form a{
 
 }
 .book-list{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    overflow: auto;
 }
 .book-info{
     margin-top: 3%;
@@ -370,6 +387,12 @@ form a{
 .book-info img{
     width: 80%;
     border-radius: 15px;
+}
+.book-info h3{
+    height: 50px;
+}
+.book-info h3, .book-info p{
+    margin-top: 3%;
 }
 .book-info button{
     border: none;
@@ -405,4 +428,160 @@ form a{
 }
 #logErrMsg, #regErrMsg{
      color: red;
+}
+.menuBtn{
+    display: none;
+}
+.sideMenuBtn{
+    display: none;
+}
+#check{
+    display: none;
+}
+
+@media screen and (max-width: 1670px){
+    
+    .first-row ul li, .imgCard, .card{
+        max-width: 15%;
+        max-height: 120px;
+        overflow: visible;
+    }
+    .book-read h3, .book-read p{
+        color: gray;
+    }
+    .first-row ul li::-webkit-scrollbar{
+        display: none;
+    }
+    .book-read h3{
+        margin-top: 10%;
+    }
+    .second-part-logo h1{
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 1117px){
+
+    .search{
+        background-color: none;
+        width: auto;
+    }
+    .search input{
+        display: none;
+        
+    }
+    .search input:focus{
+        outline: none;
+    }
+    .search button{
+         border: none;
+         cursor: pointer;
+    }
+    .second-part-logo h1{
+        font-size: 30px;
+    }
+    body{
+        overflow-y: scroll;
+    }
+    .book-read h3{
+        font-size: 16px;
+    }
+    .book-read p{
+        font-size: 12px;
+    }
+    .first-row ul li .bgImg{
+        top: -15px;
+        margin-left: 11.3%;
+        width:120px;
+        height: 400px;
+       display: none;
+    }
+    .card{
+        width:400px;
+        height: 120px;
+        display: none;
+    }
+
+}
+@media screen and (max-width: 1000px){
+    .book-read img{
+        width: 80%;
+        position: static;
+        left: 5%;
+        border-radius: 15px;
+    }
+    .book-read h3, .book-read p{
+        margin-left: 3%;
+        color: white;
+        display: none;
+    }
+    .imgCard, .card{
+        display: none;
+    }
+    .first-row ul li{
+        background-color: inherit;
+    }
+}
+
+@media screen and (max-width: 684px){
+    .menuBtn{
+        display: block;
+    }
+    .second-part-nav a, .dotBtn{
+        display: none;
+    }
+    .second-part-logo h1{
+        font-size: 20px;
+    }
+    .book-read img{
+        width: 120%;
+        position: static;
+        left: 5%;
+        border-radius: 15px;
+    }
+    .profile{
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+    .book-list{
+        display: inline;
+        overflow: scroll;
+    }
+    .board{
+        display: none;
+        position: absolute;
+        z-index: 1;
+        bottom: 35%;
+        background-color: white;
+    }
+    .bottom{
+        display: none;
+    }
+    .fa.fa-bars, .fa.fa-times{
+        font-size: 25px;
+    }
+    .sideMenuBtn{
+        display: block;
+        margin-left: 25%;
+        cursor: pointer;
+    }
+    #check:checked ~.profile{
+        display: block;
+    }
+    #check:checked ~.board{
+        display: block;
+    }
+    #check:checked #open{
+        display: none;
+    }
+    
+    .second-row{
+        display: inline;  
+    }
+    .second-column{
+        width: 100%;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+        margin-left: 0%;
+    }
 }

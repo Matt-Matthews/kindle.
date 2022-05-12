@@ -9,21 +9,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="landing-page">
-        <div class="first-Part">
-            <div class="profile">
+    <div class="landing-page">              <!--the main container to create two columns-->
+
+        <div class="first-Part">                <!--The first column-->
+
+            <input type="checkbox" id="check" >             <!--The hidden button for menu-->
+            <label for="check" class="sideMenuBtn">
+                <i class="fa fa-bars"></i>
+            </label>
+
+            <div class="profile">                               <!--the profile image and name container-->
                 <img id="profileImg" src="" alt="Profile Photo">
                 <p>Welcome <br> Back</p>
                 <h3 id="welcomeName"></h3>
             </div>
 
-            <div class="board">
+            <div class="board">                             <!--the container for the kindle board menu-->
+                
                 <div class="row-Container">
                     <h3>K.</h3>
                     <p>My<br> Kindle Board </p>
                 </div>
+
                 <div class="row-Container">
-                    <i class='fa fa-cube' style='font-size:25px'></i>
+                    <i class='fa fa-cube' style='font-size:25px'></i>   
                     <a href="#">Collections</a>
                 </div>
                 <div class="row-Container">
@@ -39,21 +48,23 @@
                     <a href="index.html">Logout</a>
                 </div>
             </div>
-            <div class="bottom">
+            
+            <div class="bottom">                        <!--the container for amazon logo-->
                     <h3>Product of</h3>
                     <img src="images/logo/amazonlogo.png">
                 
             </div>
         </div>
 
-        <div class="second-part">
-            <div class="navbar">
+        <div class="second-part">                    <!--The second column-->
+            
+            <div class="navbar">                       <!--the container for the navbar-->
 
-                <div class="second-part-logo">
+                <div class="second-part-logo">              <!--the kindle logo-->
                     <h1>Kindle<span>.</span></h1>
                 </div>
 
-                <div class="second-part-nav">
+                <div class="second-part-nav">                   <!--the container for the second part of the navbar-->
                     <div class="search">
                         <input type="text" placeholder="Search your books">
                         <button><i class='fa fa-search'></i></button>
@@ -62,120 +73,37 @@
                     <a href="#">New Release<span>.</span></a>
                     <a href="#">Featured</a>
 
-                    <button>
+                    <button class="dotBtn">                 <!--the four dots button on the top navbar-->
                         <div class="dots">
                         <div class="dot1"></div>
                         <div class="dot2"></div>
                         </div>
                     </button>
-                    
-                </div>
 
+                    <button class="menuBtn">Menu</button>           <!--the hidden menu button for smaller screen width-->
+                </div>
             </div>
 
-            <div class="second-body">
+            <div class="second-body">               <!--the body of the second part of the second column-->
+                
                 <h4>Books your read last</h4>
-                <div class="first-row" id="first-row">
-                <div class="scrollable" id="scrollable">
-                <ul id="list">
-                    
-                    <li><div class="book-read" id="book-read">
-                        <img id="lastBook1" src="">
-                        <h3 id="lastBookName1"></h3>
-                        <p id="comment1"></p>
-                    </div></li>
-                    
-                    
-                    <li><div class="book-read" id="book-read">
-                        <img id="lastBook2" src="">
-                        <h3 id="lastBookName2"></h3>
-                        <p id="comment2"></p>
-                    </div></li>
-                    
-                    
-                    <li><div class="book-read" id="book-read">
-                        <img id="lastBook3" src="">
-                        <h3 id="lastBookName3"></h3>
-                        <p id="comment3"></p>
-                    </div></li>
+                <div class="first-row" id="first-row">                      <!--the first row of the body-->
+                    <div class="scrollable" id="scrollable">            <!--this is the container for the books that was last read-->
+                        <ul id="list"></ul>                 <!--the list of the books that was last read which are rendered with javascript-->
+                    </div>
+                    <button class="prevBtn" id="prevBtn"><i class="fa fa-arrow-left"></i></button>              <!--the buttons to scroll the list of the books last read-->
+                    <button class="nextBtn" id="nextBtn"><i class="fa fa-arrow-right"></i></button>
+                </div>
 
-                    <li><div class="book-read" id="book-read">
-                        <img id="lastBook4" src="">
-                        <h3 id="lastBookName4"></h3>
-                        <p id="comment4"></p>
-                    </div></li>
-                    
-                    <li><div class="book-read" id="book-read">
-                        <img id="lastBook5" src="">
-                        <h3 id="lastBookName5"></h3>
-                        <p id="comment5"></p>
-                    </div></li>
-                   
-                </ul>
-                </div>
-                <button class="prevBtn" id="prevBtn"><i class="fa fa-arrow-left"></i></button>
-                <button class="nextBtn" id="nextBtn"><i class="fa fa-arrow-right"></i></button>
-                </div>
-                <div class="second-row">
-                    <div class="first-column">
+                <div class="second-row">                                    <!--the second row of the body-->
+                    <div class="first-column" id="first-column">            <!--this is the column that contains the new released book-->
                         <h4>New Release</h4>
-                        <div class="book-list">
-                        <div class="book-info" id="book-info">
-                            <img id="bookImg1" src="">
-                            <h3 id="bookName1"></h3>
-                            <p id="nameOfAuthor1"></p>
-                            <button id="Category1"></button>
-                        </div>
-                        <div class="book-info" >
-                            <img id="bookImg2" src="">
-                            <h3 id="bookName2"></h3>
-                            <p id="nameOfAuthor2"></p>
-                            <button id="Category2"></button>
-                        </div>
-                        <div class="book-info" >
-                            <img id="bookImg3" src="">
-                            <h3 id="bookName3"></h3>
-                            <p id="nameOfAuthor3"></p>
-                            <button id="Category3"></button>
-                        </div>
-                        <div class="book-info" >
-                            <img id="bookImg4" src="">
-                            <h3 id="bookName4"></h3>
-                            <p id="nameOfAuthor4"></p>
-                            <button id="Category4"></button>
-                        </div>
-                        <div class="book-info" >
-                            <img id="bookImg5" src="">
-                            <h3 id="bookName5"></h3>
-                            <p id="nameOfAuthor5"></p>
-                            <button id="Category5"></button>
-                        </div>
-                        </div>
+                        <div class="book-list" id="book-list"></div>        <!--this is the container for the new books released which are rendered with javascript-->
                     </div>
 
-                    <div class="second-column">
+                    <div class="second-column" id="second-column">          <!--this is the column that contains the list of famous author and the data is rendered using javascript-->
                         <h5>Famous Authers</h5>
-                        <div class="author-row">
-                            <img id="authorImg1" src="">
-                            <div class="author-details">
-                                <h6 id="authorName1"></h6>
-                                <p id="numOfBooks1"></p>
-                            </div>
-                        </div>
-                        <div class="author-row">
-                            <img id="authorImg2" src="">
-                            <div class="author-details">
-                                <h6 id="authorName2"></h6>
-                                <p id="numOfBooks2"></p>
-                            </div>
-                        </div>
-                        <div class="author-row">
-                            <img id="authorImg3" src="">
-                            <div class="author-details">
-                                <h6 id="authorName3"></h6>
-                                <p id="numOfBooks3"></p>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
 

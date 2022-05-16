@@ -299,7 +299,7 @@ form a{
     overflow-y: visible;
 }
 .first-row ul li{
-    width: 400px;
+    width: 30%;
     height: 150px;
     border-radius: 25px;
     margin-right: 1%;
@@ -307,14 +307,14 @@ form a{
 .imgCard{
     position: absolute;
     border-radius: 25px;
-    width:400px;
+    width:30%;
     height: 150px;
     background-size: cover;
 }
 .card{
     position: absolute;
     border-radius: 25px;
-    width:400px;
+    width:30%;
     height: 150px;
     backdrop-filter: blur(15px);
     background-color: rgba(0, 0, 0, 0.404);
@@ -441,14 +441,6 @@ form a{
 
 @media screen and (max-width: 1670px){
     
-    .first-row ul li, .imgCard, .card{
-        max-width: 15%;
-        max-height: 120px;
-        overflow: visible;
-    }
-    .book-read h3, .book-read p{
-        color: gray;
-    }
     .first-row ul li::-webkit-scrollbar{
         display: none;
     }
@@ -488,18 +480,7 @@ form a{
     .book-read p{
         font-size: 12px;
     }
-    .first-row ul li .bgImg{
-        top: -15px;
-        margin-left: 11.3%;
-        width:120px;
-        height: 400px;
-       display: none;
-    }
-    .card{
-        width:400px;
-        height: 120px;
-        display: none;
-    }
+    
 
 }
 @media screen and (max-width: 1000px){
@@ -533,10 +514,13 @@ form a{
         font-size: 20px;
     }
     .book-read img{
-        width: 120%;
+        width: 100%;
         position: static;
         left: 5%;
         border-radius: 15px;
+    }
+    .imgCard, .card{
+        display: none;
     }
     .profile{
         display: none;

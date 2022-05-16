@@ -132,6 +132,7 @@ let lastBooks = [               //this array contains the list of last read book
         comment: '217 page - 11 chapter - last read',
     },
     
+    
 ];
 
 function renderLastBooks(){                 //this function renders the last read books

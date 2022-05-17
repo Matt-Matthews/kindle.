@@ -41,10 +41,10 @@ function openTab(tab){          //onclick function to open the register or login
     else if(tab === 'Signup'){
         signUpTab();
     }
+    event.preventDefault();
 } 
 
 //the user data
-
 
 const userName = document.getElementById('name'); //variables for the input fields
 const email = document.getElementById('email');
@@ -67,22 +67,38 @@ document.querySelector('#img').addEventListener("change", function(){       //li
 
 function createUser(){          //create user data and store in an array
 
+    event.preventDefault();
+    
     if(userName.value !='' && surname.value!=''&& email.value!=''&& phoneNo.value!=''&& img.value!=''&& passwrd.value!='' &&cPasswrd!=''){  //check if the fields are not empty
-        if(passwrd.value == cPasswrd.value){        //checks if the new password is the same as the confirm password
+        
+        
+        if(email.value== sessionStorage.getItem('email')){
 
-            user.push(userName.value, surname.value, email.value, phoneNo.value, passwrd.value);            //store the user data into an array
-            errMsg.innerHTML = 'user created successfully';
-            
-            sigInTab();         //goes to the login form tab after storing the data 
-        }
-        else{
-            errMsg.innerHTML = 'Password do not match!';
-            //user.splice(0, user.length);
+            alert('Email already exists.');
+
+        }else{
+
+            if(passwrd.value == cPasswrd.value){        //checks if the new password is the same as the confirm password
+
+                user.push(userName.value, surname.value, email.value, phoneNo.value, passwrd.value);            //store the user data into an array
+                
+                
+                sessionStorage.setItem('name', user[0]);            //store the user data into a session storage
+                sessionStorage.setItem('surname', user[1]);
+                sessionStorage.setItem('email', user[2]);
+                sessionStorage.setItem('phoneNo', user[3]);
+                sessionStorage.setItem('passwrd', user[4]);
+                
+                sigInTab();         //goes to the login form tab after storing the data 
+            }
+            else{
+                
+                alert('Passwords do not match.');
+            }
         }
     }
     else{
-        errMsg.innerHTML = 'The form is incomplete!'
-        //user.splice(0, user.length);
+        alert('The form is incomplete!');
     }
 }
 
@@ -94,28 +110,31 @@ const welcomeName = document.getElementsByClassName('welcomeName');
 const ppic = document.getElementsByClassName('profileImg');
 
 function logUser(){                 //check the user data and compare it with the data from the array
-
+    
     if(userEmail.value != '' && userPasswd.value != ''){            //check if the fields are not empty
-        if(userEmail.value ==user[2] && userPasswd.value == user[4]){   //validate the user data
+        if((userEmail.value != user[2]) && (userEmail.value != sessionStorage.getItem('email'))){   //validate the user data
         
-            sessionStorage.setItem('name', user[0]);            //store the user data into a session storage
-            sessionStorage.setItem('surname', user[1]);
-            sessionStorage.setItem('email', user[2]);
-            sessionStorage.setItem('phoneNo', user[3]);
-            sessionStorage.setItem('passwrd', user[4]);
+            alert('Invalid email.')
 
-            window.location.href = 'landingPage.html';          //navigate to the landing page
+        }
+        else if((userPasswd.value != user[4]) && (userPasswd.value != sessionStorage.getItem('passwrd'))){
+            alert('Invalid password.')
+        }
+        else {
+            
             
 
-
-        } else {
-            logErrMsg.innerHTML = 'wrong email or password, or user does not exist!';          //return this message if the user data does not match with the input
+            window.location.href = "landingPage.html";
+ 
         }
 
     }
     else{
-        logErrMsg.innerHTML = 'Insert your email and password!';                //return this message if the input fieldss are empty
+        alert('Insert your email and password.');                //return this message if the input fieldss are empty
     }
+    
+    event.preventDefault();
+
 }
 
 

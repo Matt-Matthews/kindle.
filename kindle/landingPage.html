@@ -47,13 +47,15 @@
                     <i class='fa fa-sign-out' style='font-size:25px'></i>
                     <a href="index.html">Logout</a>
                 </div>
+                <div class="row-Container">
+                    <div class="con">                       <!--the container for amazon logo-->
+                        <h2>Product of</h2>
+                        <img src="images/logo/amazonlogo.png"> 
+                    </div>               
+                </div>
             </div>
             
-            <div class="bottom">                        <!--the container for amazon logo-->
-                    <h3>Product of</h3>
-                    <img src="images/logo/amazonlogo.png">
-                
-            </div>
+            
         </div>
 
         <div class="second-part">                    <!--The second column-->
@@ -66,8 +68,8 @@
 
                 <div class="second-part-nav">                   <!--the container for the second part of the navbar-->
                     <div class="search">
-                        <input type="text" placeholder="Search your books">
-                        <button><i class='fa fa-search'></i></button>
+                        <input type="text" id="search-input" placeholder="Search your books">
+                        <button onclick="searchFunction()"><i class='fa fa-search'></i></button>
                     </div>
 
                     <a href="#">New Release<span>.</span></a>
@@ -83,7 +85,12 @@
                     <button class="menuBtn">Menu</button>           <!--the hidden menu button for smaller screen width-->
                 </div>
             </div>
-
+            <div class="popup" id="popup">
+                <button onclick="closePopup()"><i class="fa fa-times"></i></button>
+                <div class="searchedContainer" id="searchedContainer">
+                    
+                </div>
+            </div>
             <div class="second-body">               <!--the body of the second part of the second column-->
                 
                 <h4>Books your read last</h4>

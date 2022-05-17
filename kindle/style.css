@@ -11,7 +11,7 @@ body{
 }
 h1{
     text-align: center;
-    margin-top: 5%;
+    margin-top: 1%;
     font-weight: bold;
     font-size: 3rem;
 }
@@ -23,7 +23,7 @@ h1 span{
     height: auto;
     display: flex;
     justify-content: center;
-    margin-top: 4%;
+    margin-top: 1%;
 }
 .btn{
     padding: 5px 30px;
@@ -89,8 +89,6 @@ form a{
     width: 100%;
     display: flex;
     justify-content: center;
-    position: absolute;
-    bottom: 30%;
     overflow: hidden;
     transition: .1s ease;
 }
@@ -123,18 +121,18 @@ form a{
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     width: 80%;
-    padding-bottom: 20%;
+    padding-bottom: 12%;
 }
 .profile img{
     width: 50%;
-    margin-top: 25%;
+    margin-top: 20%;
     border-radius: 25px;
 }
 .profile img, .profile p, .profile h3{
     margin-left: 25%;
 }
 .board{
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 21%;
 }
 .row-Container{
@@ -165,18 +163,13 @@ form a{
 .row-Container a:hover{
     text-decoration: underline;
 }
-.bottom{
-    width: 80%;
 
-}
-.bottom h3{
-    margin-left: 27%;
-    margin-top: 15%;
+.row-Container h2{
+    margin-top: 5%;
     font-size: 1.5rem;
 }
-.bottom img{
+.row-Container img{
     width: 40%;
-    margin-left: 25%;
 }
 .second-part{
     width: 75%;
@@ -210,7 +203,7 @@ form a{
     height: 40px;
     width: 85%;
     border: none;
-    
+    border-radius: 25px;
 }
 .search input:focus{
     outline: none;
@@ -273,7 +266,7 @@ form a{
     width: 100%;
 }
 .second-body{
-    margin-top: 5%;
+    margin-top: 1%;
 }
 .first-row{
     width: 100%;
@@ -300,7 +293,7 @@ form a{
 }
 .first-row ul li{
     width: 30%;
-    height: 150px;
+    height: 120px;
     border-radius: 25px;
     margin-right: 1%;
 }
@@ -308,14 +301,14 @@ form a{
     position: absolute;
     border-radius: 25px;
     width:30%;
-    height: 150px;
+    height: 120px;
     background-size: cover;
 }
 .card{
     position: absolute;
     border-radius: 25px;
     width:30%;
-    height: 150px;
+    height: 120px;
     backdrop-filter: blur(15px);
     background-color: rgba(0, 0, 0, 0.404);
     
@@ -369,7 +362,7 @@ form a{
 .second-row{
     display: flex;
     width: 100%;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 .first-column{
     width: 65%;
@@ -379,9 +372,11 @@ form a{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     overflow: auto;
+    margin-top: 3%;
 }
 .book-info{
     margin-top: 3%;
+    margin-right: 3%;
     width: auto;
 }
 .book-info img{
@@ -419,6 +414,13 @@ form a{
 .author-details{
     margin-left: 3%;
 }
+.author-details a{
+    font-weight: bold;
+    cursor: pointer;
+}
+.author-details a:hover{
+    text-decoration: underline;
+}
 .author-row, .second-column h5{
     margin-left: 15%;
     margin-top: 5%;
@@ -453,21 +455,7 @@ form a{
 }
 @media screen and (max-width: 1117px){
 
-    .search{
-        background-color: none;
-        width: auto;
-    }
-    .search input{
-        display: none;
-        
-    }
-    .search input:focus{
-        outline: none;
-    }
-    .search button{
-         border: none;
-         cursor: pointer;
-    }
+    
     .second-part-logo h1{
         font-size: 30px;
     }
@@ -500,6 +488,21 @@ form a{
     }
     .first-row ul li{
         background-color: inherit;
+    }
+    .search{
+        background-color: none;
+        width: auto;
+    }
+    .search input{
+        display: none;
+        
+    }
+    .search input:focus{
+        outline: none;
+    }
+    .search button{
+         border: none;
+         cursor: pointer;
     }
 }
 
@@ -568,4 +571,45 @@ form a{
         border-top-left-radius: 0px;
         margin-left: 0%;
     }
+}
+.popup{
+    
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.651);
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.searchedContainer{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    color: white;
+}
+.popup .show {
+    display: grid;
+}
+
+.popup button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.fa.fa-times{
+    font-size: 25px;
+    color: white;
+}
+.searchedbook{
+      width: 58%;
+      margin-left: 7%;
+      margin-top: 2%;
+}
+.searchedbook img{
+      width: 100%;
+}
+.searchedbook h3, .searchedbook p{
+    color: white;
 }

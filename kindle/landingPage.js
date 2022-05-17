@@ -30,7 +30,7 @@ function renderAuthors(){               //this function render the list of famou
         let authorDetails = document.createElement('div');
         authorDetails.classList.add('author-details');
         authorRow.append(authorDetails);
-        let authorName = document.createElement('h6');
+        let authorName = document.createElement('a');
         authorName.innerHTML = authors[i].author;
         authorDetails.append(authorName);
         let numOfBooks = document.createElement('p');
@@ -105,6 +105,8 @@ function renderNewBooks()               //this function renders the list of new 
 }
 renderNewBooks();
 
+
+
 let lastBooks = [               //this array contains the list of last read books
     {
         bookName: 'images/books/50-anniversary-cover1-350x564.webp',
@@ -135,7 +137,7 @@ let lastBooks = [               //this array contains the list of last read book
     
 ];
 
-function renderLastBooks(){                 //this function renders the last read books
+function renderLastBooks(lastBooks){                 //this function renders the last read books
     
     lastBooks.forEach((item,i)=>{
 
@@ -172,7 +174,7 @@ function renderLastBooks(){                 //this function renders the last rea
 
 }
 
-renderLastBooks();
+renderLastBooks(lastBooks);
 
 const list = document.querySelectorAll('#scrollable');
 const nextBtn = document.getElementById('nextBtn');
@@ -196,3 +198,83 @@ list.forEach((item, i) => {             //scrolls the list of last read books
     })
     
 });
+
+
+let searchText = document.getElementById('search-input');
+
+let popup = document.getElementById('popup');
+let searchedContainer = document.getElementById('searchedContainer');
+
+
+function searchFunction(){
+
+var counter = 0;
+var newCounter = 0;
+    
+    if(searchText.value==''){
+        alert('Please enter the name of a book')
+    }else{
+        lastBooks.forEach(object =>{
+        
+            if(object.name.toLowerCase() == searchText.value.toLowerCase()){
+                
+                let searchedbook = document.createElement('div');
+                searchedbook.classList.add('searchedbook');
+                searchedContainer.append(searchedbook);
+    
+                let img = document.createElement('img');
+                img.src = object.bookName;
+                searchedbook.append(img);
+    
+                let bookName = document.createElement('h3');
+                bookName.innerHTML = object.name;
+                searchedbook.append(bookName);
+                popup.style.display = 'block';
+            }
+            else{
+                counter += 1;
+            }
+        });
+
+        newBooks.forEach(object =>{
+        
+            if(object.bookName.toLowerCase() == searchText.value.toLowerCase()){
+                
+                let searchedbook = document.createElement('div');
+                searchedbook.classList.add('searchedbook');
+                searchedContainer.append(searchedbook);
+    
+                let img = document.createElement('img');
+                img.src = object.bookImg;
+                searchedbook.append(img);
+    
+                let bookName = document.createElement('h3');
+                bookName.innerHTML = object.bookName;
+                searchedbook.append(bookName);
+                popup.style.display = 'block';
+            }
+            else{
+                newCounter += 1;
+            }
+        });
+
+        if(counter == lastBooks.length &&newCounter == newBooks.length){
+            alert('No books found');
+        }
+        
+    }
+    
+}
+
+function closePopup(){
+    popup.style.display = 'none';
+    searchedContainer.innerHTML = '';
+}
+
+searchText.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      searchFunction();
+    }
+   
+  });

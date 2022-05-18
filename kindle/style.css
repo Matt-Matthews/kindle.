@@ -613,3 +613,12 @@ form a{
 .searchedbook h3, .searchedbook p{
     color: white;
 }
+.suggestions{
+    position: absolute;
+    height: 100%;
+    width: 40%;
+    margin-top: 2%;
+    background-color: white;
+    z-index: 1;
+    display: none;
+}

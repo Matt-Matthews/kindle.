@@ -216,7 +216,7 @@ var newCounter = 0;
     }else{
         lastBooks.forEach(object =>{
         
-            if(object.name.toLowerCase() == searchText.value.toLowerCase()){
+            if(object.name.toLowerCase().substr(0,searchText.value.length)        == searchText.value.toLowerCase()){
                 
                 let searchedbook = document.createElement('div');
                 searchedbook.classList.add('searchedbook');
@@ -238,7 +238,7 @@ var newCounter = 0;
 
         newBooks.forEach(object =>{
         
-            if(object.bookName.toLowerCase() == searchText.value.toLowerCase()){
+            if(object.bookName.toLowerCase().substr(0,searchText.value.length) == searchText.value.toLowerCase()){
                 
                 let searchedbook = document.createElement('div');
                 searchedbook.classList.add('searchedbook');

@@ -284,7 +284,7 @@ form a{
 }
 .first-row ul{
     list-style: none;
-    margin-top: 10%;
+    margin-top: 9%;
     width: 160%;
     display: inline-flex;
     justify-content: space-between;
@@ -372,10 +372,10 @@ form a{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     overflow: auto;
-    margin-top: 3%;
+    margin-top: 2%;
 }
 .book-info{
-    margin-top: 3%;
+    margin-top: 2%;
     margin-right: 3%;
     width: auto;
 }
@@ -384,10 +384,13 @@ form a{
     border-radius: 15px;
 }
 .book-info h3{
-    height: 50px;
+    height: 60px;
 }
-.book-info h3, .book-info p{
+.book-info h3{
     margin-top: 3%;
+}
+.book-info p{
+    font-size: 13px;
 }
 .book-info button{
     border: none;
@@ -395,6 +398,7 @@ form a{
     padding: 3px 10px;
     border-radius: 25px;
     cursor: pointer;
+    margin-top: 10px;
 }
 .second-column{
     width: 30%;

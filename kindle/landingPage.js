@@ -204,62 +204,68 @@ let searchText = document.getElementById('search-input');
 
 let popup = document.getElementById('popup');
 let searchedContainer = document.getElementById('searchedContainer');
-
+var isDisplayed = false;
 
 function searchFunction(){
 
 var counter = 0;
 var newCounter = 0;
+
     
     if(searchText.value==''){
         alert('Please enter the name of a book')
     }else{
-        lastBooks.forEach(object =>{
+        if(isDisplayed == false){
+            lastBooks.forEach(object =>{
         
-            if(object.name.toLowerCase().substr(0,searchText.value.length)        == searchText.value.toLowerCase()){
-                
-                let searchedbook = document.createElement('div');
-                searchedbook.classList.add('searchedbook');
-                searchedContainer.append(searchedbook);
-    
-                let img = document.createElement('img');
-                img.src = object.bookName;
-                searchedbook.append(img);
-    
-                let bookName = document.createElement('h3');
-                bookName.innerHTML = object.name;
-                searchedbook.append(bookName);
-                popup.style.display = 'block';
-            }
-            else{
-                counter += 1;
-            }
-        });
-
-        newBooks.forEach(object =>{
+                if(object.name.toLowerCase().substr(0,searchText.value.length) == searchText.value.toLowerCase()){
+                    
+                    let searchedbook = document.createElement('div');
+                    searchedbook.classList.add('searchedbook');
+                    searchedContainer.append(searchedbook);
         
-            if(object.bookName.toLowerCase().substr(0,searchText.value.length) == searchText.value.toLowerCase()){
-                
-                let searchedbook = document.createElement('div');
-                searchedbook.classList.add('searchedbook');
-                searchedContainer.append(searchedbook);
+                    let img = document.createElement('img');
+                    img.src = object.bookName;
+                    searchedbook.append(img);
+        
+                    let bookName = document.createElement('h3');
+                    bookName.innerHTML = object.name;
+                    searchedbook.append(bookName);
+                    popup.style.display = 'block';
+                    isDisplayed = true;
+                }
+                else{
+                    counter += 1;
+                }
+            });
     
-                let img = document.createElement('img');
-                img.src = object.bookImg;
-                searchedbook.append(img);
+            newBooks.forEach(object =>{
+            
+                if(object.bookName.toLowerCase().substr(0,searchText.value.length) == searchText.value.toLowerCase()){
+                    
+                    let searchedbook = document.createElement('div');
+                    searchedbook.classList.add('searchedbook');
+                    searchedContainer.append(searchedbook);
+        
+                    let img = document.createElement('img');
+                    img.src = object.bookImg;
+                    searchedbook.append(img);
+        
+                    let bookName = document.createElement('h3');
+                    bookName.innerHTML = object.bookName;
+                    searchedbook.append(bookName);
+                    popup.style.display = 'block';
+                    isDisplayed = true;
+                }
+                else{
+                    newCounter += 1;
+                }
+            });
     
-                let bookName = document.createElement('h3');
-                bookName.innerHTML = object.bookName;
-                searchedbook.append(bookName);
-                popup.style.display = 'block';
+            if(counter == lastBooks.length &&newCounter == newBooks.length){
+                alert('No books found');
+                isDisplayed = false;
             }
-            else{
-                newCounter += 1;
-            }
-        });
-
-        if(counter == lastBooks.length &&newCounter == newBooks.length){
-            alert('No books found');
         }
         
     }
@@ -269,6 +275,7 @@ var newCounter = 0;
 function closePopup(){
     popup.style.display = 'none';
     searchedContainer.innerHTML = '';
+    isDisplayed = false;
 }
 
 searchText.addEventListener("keypress", function(event) {
@@ -278,3 +285,13 @@ searchText.addEventListener("keypress", function(event) {
     }
    
   });
+
+  const sugg = document.getElementById('suggestions');
+  searchText.addEventListener("input", function(event) {
+   
+    closePopup();
+    
+  });
+
+
+  
